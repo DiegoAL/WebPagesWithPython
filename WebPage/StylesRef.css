@@ -1,0 +1,23 @@
+@CHARSET "ISO-8859-1";
+
+h4{
+	color: orange;
+	background-color: green;
+}
+
+p{
+	color: gray;
+	background-color: orange;
+}
+
+div{
+	width: 300px;
+	height: 140px;
+	background-color: teal;
+	
+	/*Borda externa*/
+	margin: 30px;
+	
+	/*Borda interna*/
+	padding: 20px;
+}
