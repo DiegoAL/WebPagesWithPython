@@ -15,9 +15,54 @@ div{
 	height: 140px;
 	background-color: teal;
 	
-	/*Borda externa*/
+	/*Tamanho borda externa*/
 	margin: 30px;
 	
-	/*Borda interna*/
+	/*Tamanho borda interna*/
 	padding: 20px;
+	
+	/*Configurando a borda*/
+	border: 4px dotted lightgreen;
+	
+	/*Trabalhando com fontes*/
+	/*Tem usar a primeira se não der usa a segunda fonte, 
+	tentar garantir o stylo principalmente em browsers antigos*/
+	font-family: sans-serif,"Times new Roman";
+	font-size: 30px;
+	/*tipo*/
+	font-weight: bold;
+}
+
+table{
+	border: 4px solid gray;
+	border-collapse: collapse;
+	width: 50%;
+}
+
+th, td{
+	border: 1px dotted black;
+	padding: 3px;
+	text-align: center;
+}
+
+th{
+	background-color: lightgray;
+}
+
+/*No css # se referencia a IDs, e IDs são unicos*/
+#top{
+	font-family: aerial;
+	font-size: 30px
+}
+
+#middle{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+/*No css . se referencia a classes*/
+.anotacao{
+	/*sublinhado*/
+	text-decoration: underline;
+	
 }
