@@ -1,0 +1,9 @@
+/*Media query*/
+/*é uma forma de aplicar estilo dependendo do estilo de media que esta sendo utilizado*/
+
+/*o estilo é aplicado quando a pagina é imprimida*/
+@media print {
+    .screan-only{
+        display: none;
+    }
+}
