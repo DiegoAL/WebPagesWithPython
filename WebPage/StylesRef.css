@@ -49,7 +49,7 @@ th{
 	background-color: lightgray;
 }
 
-/*No css # se referencia a IDs, e IDs são unicos*/
+/*No css '#' se referencia a IDs, e IDs são unicos*/
 #top{
 	font-family: aerial;
 	font-size: 30px
@@ -60,9 +60,53 @@ th{
 	font-size: 18px;
 }
 
-/*No css . se referencia a classes*/
+/*No css '.' se referencia a classes*/
 .anotacao{
 	/*sublinhado*/
 	text-decoration: underline;
 	
+}
+
+/* utiilzando elementos sem a ',' o siginicado é: */
+/* 	todos os elementos decentes receberam este estilo.
+	para ignorar os decentes indiretos (sub elementos) é necessario utilizar o '>'
+	ex: ol > li{} 
+	neste caso somente os 'li' que esteja direto dentro de 'ol' receberam o estilo,
+	outros subelementos n receberam*/
+
+ol li{
+	color: red;
+	text-decoration: bold;
+}
+
+/* aplicando estilo apenas em itens que tenha um atributo especifico */
+input[type=text]{
+	background-color: red;
+}
+
+input[type=number]{
+	background-color: yellow;
+}
+
+/* pseudo-class */
+/*adicionam estilos dependendo de determinadas ações executadas pelo usuario*/
+button:HOVER {
+	background-color: red
+}
+
+/* pseudo-class */
+/*adiconando estilo a uma parte do código*/
+/*no caso o conteudo não recebera o estilo*/
+a::BEFORE {
+	         /*este código é para caracteres especiais (unicode symbol)*/
+	content: "\21d2 Clique Aqui ";
+	font-weight: bold;
+	color: gray;
+}
+
+/* pseudo-class */
+/*Texto muda de cor ao ser selecionado*/
+p::SELECTION {
+	background-color: red;
+	color: yellow;
 }
