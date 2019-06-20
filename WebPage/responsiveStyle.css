@@ -2,8 +2,54 @@
 /*é uma forma de aplicar estilo dependendo do estilo de media que esta sendo utilizado*/
 
 /*o estilo é aplicado quando a pagina é imprimida*/
-@media print {
+/*@media print {
     .screan-only{
         display: none;
     }
+}    
+*/
+
+
+/*Com base no tamanho da pagina será aplicado um estilo CCS*/
+/*Quando for maior que 700px*/
+@media (min-width: 700px) {
+  body {
+      background-color: red;
+  }
 }
+  /*Quando for menor que 699px*/
+@media (max-width: 699px) {
+  body {
+      background-color: yellow;
+  }
+}
+
+
+/*Estilo somente será aplicado dependendo do tamanho da pagina*/
+@media (max-width:500px){
+	.spanSize{
+		display: none;
+	}
+	h1::BEFORE {
+		content: "Conteudo foi alterado!"
+	}
+}
+
+
+/*Flexbox*/
+/*Conforme o tamanho atual da pagina o conteudo é reordenado*/
+.myFlexBox{
+	display: flex;
+	/*definição de como será sobreescrita */
+	flex-wrap: wrap;
+}
+
+.myFlexBox > div{
+	background-color: blue;
+	font-size: 20px;
+	margin: 20px;
+	padding: 20px;
+	width: 200px;
+}
+
+
