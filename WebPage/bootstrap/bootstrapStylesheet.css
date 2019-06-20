@@ -1,0 +1,9 @@
+/*BOOTSTRAP estilo*/
+
+/*Bootstrap trabalha com um conceito de coluna, sua pagina é divida em 12 coluna e 12 linhas*/
+
+.row > div{
+    padding: 10px;
+    background-color: #42f4e2;
+    border: 2px solid black;
+}

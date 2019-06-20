@@ -45,11 +45,33 @@
 }
 
 .myFlexBox > div{
-	background-color: blue;
+	background-color: springgreen;
 	font-size: 20px;
 	margin: 20px;
 	padding: 20px;
 	width: 200px;
 }
 
+
+/*grid*/
+/*e uma forma de alocar os elementos de forma parecida a uma tabela*/
+.grid{
+	background-color: green;
+	display: grid;
+	padding: 15px;
+	/*espaçamento entre as linhas e colunas*/
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+	                       /*define a quantidade e tamanho de cada coluna*/
+						   /*sendo que  3 sera auto ajustavel*/
+	grid-template-columns: 200px 200px auto;
+}
+
+.grid-item{
+	background-color: aliceblue;
+	padding: 10px;
+	text-align: center;
+	font-size: 20px;
+	text-decoration: underline;
+}
 
