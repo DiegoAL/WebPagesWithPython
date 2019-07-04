@@ -1,4 +1,5 @@
 /*BOOTSTRAP estilo*/
+/* API: https://getbootstrap.com/docs/4.3/components/alerts/ */
 
 /*Bootstrap trabalha com um conceito de coluna, sua pagina é divida em 12 coluna e 12 linhas*/
 
@@ -7,3 +8,5 @@
     background-color: #42f4e2;
     border: 2px solid black;
 }
+
+

@@ -5,8 +5,10 @@
     <link rel="stylesheet" href="bootstrapStylesheet.css">
 </head>
 <body>
+    <h4>Utilizando bootstrap</h4>
+    <!-- container é uma classe do bootstraps-->
     <div class="container">
-        <!--row é uma classe especial no bootstrap -->
+        <!--row é uma classe especial no bootstrap, que indica a divisao das 12 colunas -->
         <div class="row">
             <!-- indica que vamos usar 3 colunas no bootstrap -->
             <div class="col-3"> Primeira sessao</div>
@@ -15,5 +17,41 @@
             <div class="col-3"> Por fim... a Quarta</div>
         </div>
     </div>
+ 
+ 	<br/>   
+ 
+    <h4>Aqui é utilizado o flexbox do bootstrap com base em tamanhos já pré definidos pelo framework</h4>
+    <div class="container">
+        <!--row é uma classe especial no bootstrap, que indica a divisao das 12 colunas -->
+        <div class="row">
+        <!-- Com base no tamanho da tela um tipo de formatacao é aplicada --->
+            	  	   <!-- lg -> large: para telas grandes-->
+            	  			    <!-- sm -> Small: para telas pequenas-->
+            <div class="col-lg-3 col-sm-6"> Primeira sessao</div>
+            <div class="col-lg-3 col-sm-6"> Segunda</div>
+            <div class="col-lg-3 col-sm-6"> Terceira</div>
+            <div class="col-lg-3 col-sm-6"> Por fim... a Quarta</div>
+        </div>
+    </div>
+    
+    <br/>   
+    
+    <h4>Utilizando alertas do bootstrap</h4>
+    <div class="container">
+    	<div class="alert alert-primary" role="alert">
+    		Este é um alerta
+    	</div>
+    	<div class="alert alert-success" role="alert">
+    		Este é um alerta de sucesso
+    	</div>
+    	<div class="alert alert-warning" role="alert">
+    		Este é um alerta de aviso
+    	</div>
+    	<div class="alert alert-danger" role="alert">
+    		Este é um alerta de perigo
+    	</div>
+    
+    </div>
+     	    
 </body>
 </html>

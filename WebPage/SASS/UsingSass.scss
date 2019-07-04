@@ -1,0 +1,22 @@
+/*SASS*/
+/*API: https://sass-lang.com/install*/
+
+/*!!Importante!!*/
+/*Sass não é diretamente interpretado pelo navegador*/
+/*é necessario compilar e transformar em css puro*/
+
+
+/*É uma camada acima do CSS pra tornar a criação de estilos mais facilitada*/
+
+/*definindo uma variavel e atribuindo valores*/
+$color: red;
+
+ul{
+	font-size: 15px;
+	color: $color;
+}
+
+ol{
+	font-size: 20px;
+	color: $color;
+}
