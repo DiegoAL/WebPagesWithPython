@@ -1,0 +1,3 @@
+**Git hub tem suporte a sass e fará a compilação automatica quando houver o push
+sass <nomeDoArquivoSass.scss> <nomeDoNovoArquivo.css> -> compila um arquivo sass para css
+sass --watch <nomeDoArquivoSass.scss>:<nomeDoNovoArquivo.css> -> automaticamente recompila o arquivo scss a cada mudança

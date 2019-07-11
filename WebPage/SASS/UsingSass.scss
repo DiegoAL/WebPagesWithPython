@@ -20,3 +20,19 @@ ol{
 	font-size: 20px;
 	color: $color;
 }
+
+/*nest*/
+/*e uma forma mais simple e facil de organizar os estilos*/
+
+div{
+	font-size: 20px;
+	
+	p{
+		color: red;
+	}
+		
+	
+	ul{
+		color: blue;
+	}
+}
