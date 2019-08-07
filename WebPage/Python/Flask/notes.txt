@@ -1,0 +1,19 @@
+
+-->how to run flask
+
+On powershell:
+
+$env:FLASK_APP = "application.py" -> “nome da aplicação.py”
+
+Flask run
+
+In case that “flask run” does not work you could try:
+
+Python -m flask run
+
+--> para mudar o app padrão do flask
+export FLASK_APP=application.py -> “nome da aplicação.py”
+
+-->Atualizacao automatia
+Por padrão mudanças não são incorporadas automamticamente, é necessario restarta o serve flask,
+	entretato ativando o debbug mode as mudanças sobem de forma automatica

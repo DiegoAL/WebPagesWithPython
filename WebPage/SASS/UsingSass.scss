@@ -21,6 +21,7 @@ ol{
 	color: $color;
 }
 
+
 /*nest*/
 /*e uma forma mais simple e facil de organizar os estilos*/
 
@@ -36,3 +37,31 @@ div{
 		color: blue;
 	}
 }
+
+
+/*herança de estilo*/
+
+%estiloGenerico{	
+	font-family: sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	border: 1px solid black;
+	padding: 20px;
+	margin: 20px;
+}
+
+.msgSucesso{
+	@extend %estiloGenerico;
+	background-color: green;
+}
+
+.msgErro{
+	@extend %estiloGenerico;
+	background-color: red;
+}
+
+.msgAviso{
+	@extend %estiloGenerico;
+	background-color: yellow;
+}
+

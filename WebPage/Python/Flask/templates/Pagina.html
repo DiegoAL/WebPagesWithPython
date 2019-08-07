@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Minha pagina com python</title>
+	
+	</head>
+
+	<body>
+		<!-- O processamento dos templates ocorrer primeiramente no servidor flask, sendo assim quando vai pro browser
+				alguma condiçoes, como o if ou outro codigo python, não são enviados   -->
+		<h3>Utilizando python para referenciar uma pagina html</h3>
+		
+		
+		<!-- variavel que será modificada atravez do python -->
+		<h4>{{pythonVariable}}</h4>
+		
+		
+		<!-- Trabalhando com condicoes python no html -->
+		<div style="text-align: center">
+			{% if anoNovo %}
+				<h3>Feliz ano novo !!!</h3>
+			{% else %}
+				<h3>Não é ano novo...</h3>
+			{%endif%}	
+		</div>
+			
+	</body>
+
+</html>
