@@ -60,3 +60,20 @@ def condicoes():
     now = datetime.datetime.now()
     anoNovo = now.month == 1 and now.day == 1
     return render_template("Pagina.html", anoNovo = anoNovo)
+
+
+#passando uma lista e exibindo cada valor dentro de um loop (for)
+@app.route("/loop")
+def htmlLoop():
+    nameList = ['Diego', 'Franciele', 'Miguel', 'Helena']
+    return render_template("Pagina.html", names = nameList)
+
+
+#trabalhando com link de paginas (uma apontando para outra)
+@app.route('/paginaLinkada1')
+def paginaLink1():
+    return render_template("Pagina.html")
+
+@app.route('/paginalinkada2')
+def paginaLink2():
+    return render_template('PaginaLinkada.html')

@@ -8,7 +8,7 @@
 
 	<body>
 		<!-- O processamento dos templates ocorrer primeiramente no servidor flask, sendo assim quando vai pro browser
-				alguma condiçoes, como o if ou outro codigo python, não são enviados   -->
+				algumas condiçoes, como o if ou outro codigo python, não são enviados   -->
 		<h3>Utilizando python para referenciar uma pagina html</h3>
 		
 		
@@ -24,6 +24,21 @@
 				<h3>Não é ano novo...</h3>
 			{%endif%}	
 		</div>
+		
+		
+		<!-- Trabalhando com loops dentor do html  -->
+		<h2>Nomes</h2>
+		<ul>
+			{%for name in names%}
+				<li>{{ name }}</li>
+			{% endfor %}
+		</ul>
+		
+		
+		<!-- Trabalhando com link de paginas  -->
+		<h3>Linkando uma pagina em outra</h3>
+			<!-- O paramentro é o nome do metodo Python  -->
+		<a href="{{url_for('paginaLink2')}}">Ir para proxima pagina</a>
 			
 	</body>
 
