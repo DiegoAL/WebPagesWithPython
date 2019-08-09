@@ -77,3 +77,13 @@ def paginaLink1():
 @app.route('/paginalinkada2')
 def paginaLink2():
     return render_template('PaginaLinkada.html')
+
+
+#utilizando uma pagina como layout e outras herdando ela e modificando o conteudo
+@app.route('/utilizandoLayout')
+def useLayout():
+    return render_template('usandoLayout1.html')
+
+@app.route('/utilizandoLayout2')
+def useLayout2():
+    return render_template('usandoLayout2.html')

@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+	Pagina 2 com layout
+{% endblock %}
+
+{% block body %}
+	<p>Pagina 2 linkada e utilizando layout</p>
+	<a href="{{url_for('useLayout2')}}">Voltar</a>
+{% endblock %}

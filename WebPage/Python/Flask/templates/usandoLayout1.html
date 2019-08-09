@@ -1,0 +1,12 @@
+<!-- faz a herança de todo o conteudo da pagina de layout -->
+{% extends "layout.html"%}
+
+<!-- para utilizar o block basta fazer referencia a ele -->
+{% block heading%}
+	Utilizando uma pagina de layout, pagina 1
+{% endblock%}
+	
+{% block body%}
+	<p>utilizando um outro block</p>
+	<a href="{{url_for('useLayout2')}}">Proxima Pagina</a>
+{% endblock%}
