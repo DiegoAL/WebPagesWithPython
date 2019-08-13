@@ -11,10 +11,12 @@
 				algumas condiçoes, como o if ou outro codigo python, não são enviados   -->
 		<h3>Utilizando python para referenciar uma pagina html</h3>
 		
+</br>
 		
 		<!-- variavel que será modificada atravez do python -->
 		<h4>{{pythonVariable}}</h4>
 		
+</br>
 		
 		<!-- Trabalhando com condicoes python no html -->
 		<div style="text-align: center">
@@ -25,7 +27,8 @@
 			{%endif%}	
 		</div>
 		
-		
+</br>
+			
 		<!-- Trabalhando com loops dentor do html  -->
 		<h2>Nomes</h2>
 		<ul>
@@ -34,12 +37,41 @@
 			{% endfor %}
 		</ul>
 		
-		
+</br>
+			
 		<!-- Trabalhando com link de paginas  -->
 		<h3>Linkando uma pagina em outra</h3>
 			<!-- O paramentro é o nome do metodo Python entre ''  -->
 		<a href="{{url_for('paginaLink2')}}">Ir para proxima pagina</a>
+		
+</br>
 			
+		<!-- Enviando informações entre paginas com formularios -->
+		<form action="{{url_for('workingForulario')}}" method="POST">
+			<input type="text" placeholder="Digite seu nome" name="nome">
+			<button>Enviar</button>
+		</form>	
+	
+<br/>
+
+		<!-- Armazenando informações em uma sessão no lado do servidor -->
+		<h3 style="color: red; font-size: 30px"> Notas Armazenadas:</h3>
+		
+		<!-- Quanto a pagina for carregada para cada nota enviada um novo item será adicionado na lista -->
+		{% for note in notes %}
+		<ul>
+			<li>{{note}}</li>
+		</ul>	
+		{% endfor %}
+		
+		<!-- O formulario é atualizado em tempo real pois a url de envio de dados é a mesma que recebe, ou seja, é como um refresh -->
+		<form action="{{url_for('sessao')}}" method="POST">
+			<input type="text" name="nota" placeholder="digite uma nota...">
+			<button>Salvar nota</button>
+		</form>
+		
+	
+	
 	</body>
 
 </html>

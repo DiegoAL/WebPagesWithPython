@@ -4,7 +4,9 @@ Created on 26 de jul de 2019
 @author: Diego Alves A. (diego.assis@enel.com)
 
 '''
-from flask import Flask, render_template
+from flask import Flask, render_template, request, session
+from flask_session import Session
+
 import datetime
 
 #para rodar uma aplicação feita em flask é necessario acessar o terminal e digitar:
@@ -87,3 +89,37 @@ def useLayout():
 @app.route('/utilizandoLayout2')
 def useLayout2():
     return render_template('usandoLayout2.html')
+
+
+#Enviando informações entre paginas com formularios
+#Dentro do 'methods' é descrito todos os metodos que serõa aceitos pelo codigo,
+    #outros metodos serão ignorados, gerando um erro para o usuario.
+@app.route('/formularios', methods=["POST", "GET"])
+def workingForulario():
+    if request.method == "GET":
+        return "Favor submeter esta pagina via POST"
+    else:
+        #A biblioteca 'request' é responsavel por pegar informações de formularios
+        nome = request.form.get('nome')
+        return render_template("recebendoFormulario.html", nome=nome)
+    
+
+#Armazenando informações em uma sessão no lado do servidor
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
+
+#utilizar um variavel 'global' ou seja declarada fora de um metodo permite que varios usuarios a utilizem e atualizem a aplicacao
+#entretanto sem utilizar uma sessao esses dados são apagados quando o servidor é reiniciado
+#o pacote 'session' do Flask permite criar sessoes individuais
+#já o pacote 'Session" do flask_session tem features adicionais para maior controle como por exemplo armazenar as informações no server-side
+
+@app.route('/sessao', methods=['POST', 'GET'])
+def sessao():
+    #com o session[] é definido que a lista pertence a uma sessao unica
+    if session.get('notes') is None:
+        session['notes'] = []
+    if request.method == 'POST':
+        session['notes'].append(request.form.get('nota'))
+    
+    return render_template('Pagina.html', notes = session['notes'])
