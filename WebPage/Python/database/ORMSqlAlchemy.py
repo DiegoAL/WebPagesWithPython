@@ -6,7 +6,7 @@ from flask import Flask, render_template, request
 from models import *
 
 #classe para ser utilizada no processo de consulta ao banco de dados
-from Model_Table_Using_SqlAlchemy import Flight
+from Model_Table_Using_SqlAlchemy import *
 
 app = Flask(__name__)
 
@@ -33,8 +33,7 @@ def main():
     #Realizando SELECTS
     
     #Selecionando todos os registros 'SELECT * FROM' e retorna uma lista
-    flights = Flight.query.all()
-    
+    flights = Flight.query.all() 
     #imprime cada registro do banco encontrado pela query
     for ft in flights:
         print(f'Origem: {ft.origin} | Destino: {ft.destination} | Tempo: {ft.duration} minutos')
@@ -68,7 +67,16 @@ def main():
     Flight.query.filter(Flight.origin.like('%o%')).all
     
     #Procurando por valores que estejam em um range 'IN'
+    #é necessario utilizar o "_" para diferenciar o in da biblioteca python do in do sqlalchemy
     Flight.query.filter(Flight.origin.in_(['Brazil', 'New York'])).all
+    
+    #realizando querys com "AND" e "OR"
+    Flight.query.filter(and_(Flight.origin == 'Paris', Flight.duration > 500)).all
+    Flight.query.filter(or_(Flight.origin == 'Paris', Flight.duration > 500)).all
+    
+    #realizando select com "JOIN" para relacionamento entre tabelas
+    db.session.query(Flight, Passenger).filter(Flight.id == Passenger.flight_id).all()
+    
     
     
     #Realizando UPDATE
