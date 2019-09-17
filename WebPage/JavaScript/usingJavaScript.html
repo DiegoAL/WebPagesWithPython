@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Insert title here</title>
+		<script>
+		
+		<!-- definindo uma função sem parametros, somente quando for invocada que será executada -->	
+		function chamaAlerta(){
+			alert('Hello');
+		}
+		
+		<!--document > parametro que permite interar com a pagina HTML -->
+		<!--querySelector > permite pesquisar por itens, como elementos CSS ou tags, mas apenas o primeiro resultado sera acessado -->
+		<!--innerHTML > permite acessar a parte de entro do conteudo, ou seja, o que esta entre ><, neste caso sera o texto ola-->
+		function alterarCampo(){			
+			document.querySelector('h2').innerHTML = 'Alterado via JS';
+		}
+		
+		<!-- declarando uma variavel -->
+		let contador = 0
+		
+		<!-- realizando o incremento de um numero em uma pagina -->
+		<!-- para buscar por id basta utilizar o # -->
+		<!-- se o contador for divisivel por 10 é enviado um alert com o valor do contador-->
+		function incrementaContador(){
+			contador++;
+			document.querySelector('#numero').innerHTML = contador;
+			
+			if (contador % 10 === 0){
+				alert(`O contador está valendo: ${contador}`);
+			}
+		}
+
+
+		</script>
+	</head>
+	
+	<body>
+		<h2>Ola</h2>
+		
+		<!-- O JS conhece alguns tipos de eventos, com isso podemos configurar a chamada de uma função -->
+		<button onclick="chamaAlerta()">Alerta</button>
+		
+		<button onclick="alterarCampo()">Alterar Texto</button>
+		
+		</br>
+		<h4 id="numero">0</h4>
+		<button onclick="incrementaContador()">Aumentar contador</button>
+		
+	</body>
+</html>

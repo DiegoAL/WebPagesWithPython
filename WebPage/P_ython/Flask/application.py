@@ -4,7 +4,7 @@ Created on 26 de jul de 2019
 @author: Diego Alves A. (diego.assis@enel.com)
 
 '''
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, jsonify
 from flask_session import Session
 
 import datetime
@@ -123,3 +123,15 @@ def sessao():
         session['notes'].append(request.form.get('nota'))
     
     return render_template('Pagina.html', notes = session['notes'])
+
+
+#Para criarmos uma API basta utilizar um metodo de comunicação que seja padronizado, neste caso JSON
+@app.route('/API/<int:myid>')
+def myApi(myid):
+    if myid == 1:
+        return jsonify({"error" : "O ID informado é invalido!"}), 422
+    else:
+        return jsonify({"var1" : "valor do parametro 1",
+                        "var2" : "ola",
+                        "var3" : "e assim por diante..."})
+    
